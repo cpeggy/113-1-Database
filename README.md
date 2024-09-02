@@ -1,2 +1,6 @@
-# 113-1-Database
-113-1 Database (ntnu tahrd)
+# 113-1 Database
+### About me
+✨ 系級：科技系4年級
+✨ 姓名：簡珮軒
+✨ 這裡是我資料庫系統的輸出天地
+### Homework
