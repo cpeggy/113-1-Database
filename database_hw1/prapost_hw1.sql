@@ -1,0 +1,1 @@
+CREATE DATABASE prapost_hw1;
