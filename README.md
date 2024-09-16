@@ -6,6 +6,7 @@
 ## Course PPT
 #### [week1](https://docs.google.com/presentation/d/1BPNsQtDIZIOH6s35TtE4y9u0ZLBTJjwblICJ7umgAGs/edit#slide=id.g23dd2219a46_0_124)
 #### [week2](https://docs.google.com/presentation/d/17RvKJkc6k4TIbIObdTClapRRBklTYxEHl6MXqazSvMA/edit#slide=id.g23dd2219a46_0_124)
+#### [week3](https://docs.google.com/presentation/d/1HFphBEPWo5wiRR42c9BLcsLX5CcqrIAQP40djYcmxbY/edit#slide=id.g2fb130e99cc_0_30)
 ## Practice
 #### [Flask + MySQL](https://github.com/cpeggy/113-1-Database/tree/main/database_pra1)
 ## Homework
