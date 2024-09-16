@@ -10,3 +10,4 @@
 ## Practice
 #### [Flask + MySQL](https://github.com/cpeggy/113-1-Database/tree/main/database_pra1)
 ## Homework
+#### [HW1](https://github.com/cpeggy/113-1-Database/tree/main/database_hw1)
