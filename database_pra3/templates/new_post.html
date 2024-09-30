@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>new post - Bootdey.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin-top: 20px;
+            background-color: #eeeeee;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: 60%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        form input[type="text"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1.1em;
+            box-sizing: border-box;
+        }
+
+        form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        form input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .dropdown-menu {
+            text-align: left;
+        }
+
+        .post-options {
+            display: inline-block;
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="/" method="POST">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+        
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" required></textarea><br><br>
+
+        <label for="partner_needed">Looking for Partner:</label>
+        <input type="checkbox" id="partner_needed" name="partner_needed"><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+
+    <h2>Posts</h2>
+    <div>
+        {% if tables %}
+            <ul class="list-group">
+                {% for post in tables %}
+                    <li class="list-group-item">
+                        <!-- More options button (⋮) -->
+                        <div class="post-options">
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu{{ post.post_id }}" data-toggle="dropdown" aria-expanded="false">
+                                    ⋮
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu{{ post.post_id }}">
+                                    <li>
+                                        <form action="{{ url_for('delete_bp.delete_posts') }}" method="POST" style="display:inline;">
+                                            <input type="hidden" name="post_id" value="{{ post.post_id }}">
+                                            <button type="submit" class="btn btn-link">Delete</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <strong>{{ post.title }}</strong><br>
+                        {{ post.content }}<br>
+                        {% if post.partner_needed %}
+                            <em>Looking for a partner</em>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No posts available.</p>
+        {% endif %}
+    </div>
+
+    <!-- 引入jQuery 和 Bootstrap的JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
