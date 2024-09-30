@@ -14,5 +14,6 @@
 ## Practice
 #### [Flask + MySQL](https://github.com/cpeggy/113-1-Database/tree/main/database_pra1)
 #### [Flask + MySQL create&read](https://github.com/cpeggy/113-1-Database/tree/main/database_pra2)
+#### [Flask + MySQL create&read&delete](https://github.com/cpeggy/113-1-Database/tree/main/database_pra3)
 ## Homework
 #### [HW1](https://github.com/cpeggy/113-1-Database/tree/main/database_hw1)
