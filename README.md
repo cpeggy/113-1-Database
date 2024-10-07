@@ -18,5 +18,6 @@
 #### [Flask + MySQL create&read&delete](https://github.com/cpeggy/113-1-Database/tree/main/database_pra3)
   - [Improvement of pop and created_time](https://github.com/cpeggy/113-1-Database/tree/main/database_pra3imporve)
 #### [Flask +MySQL CRUD](https://github.com/cpeggy/113-1-Database/tree/main/database_pra4)
+  - [Improvement of search function](https://github.com/cpeggy/113-1-Database/tree/main/database_pra4improve)
 ## Homework
 #### [HW1](https://github.com/cpeggy/113-1-Database/tree/main/database_hw1)
