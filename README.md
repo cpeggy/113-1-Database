@@ -13,7 +13,7 @@
 #### [week7](https://docs.google.com/presentation/d/11NYzzT6Z5HWKFV4chKcUTBK_du68cvPryrZHhTrpOSE/edit#slide=id.g23dd2219a46_0_124)
 ## Resource 
 #### [Mermaid](https://mermaid.live/edit#pako:eNpVjs1qw0AMhF9F6NRC_AI-FBq7zSXQQnPz5iBs2bvE-8NaSwi2373r-NLqJM18M2jG1neMJfajv7eaosClVg7yvDeVjmYSS9MViuJtObGA9Y4fCxxfTh4m7UMwbnjd-eMGQTWfN4xBtHG3dbeqZ_7L8QJ1c6YgPlz_Ope7X-CjMd861_93dOSc-mx6KnsqWopQUXwieEDL0ZLp8vvzpigUzZYVlnntuKc0ikLl1oxSEv_zcC2WEhMfMPo0aMyd45SvFDoSrg0NkeyOrL_WfFuF)
-#### [!image]()
+#### [!image](https://github.com/cpeggy/113-1-Database/blob/main/%E6%88%AA%E5%9C%96%202024-10-14%2009.24.49.png)
 (from w3schools : https://www.w3schools.com/sql/sql_join.asp)
 ## Practice
 #### [Flask + MySQL](https://github.com/cpeggy/113-1-Database/tree/main/database_pra1)
