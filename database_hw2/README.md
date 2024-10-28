@@ -8,7 +8,7 @@
   - Comment
 ![page](https://github.com/cpeggy/113-1-Database/blob/main/database_hw2/%E6%88%AA%E5%9C%96%202024-10-28%2016.10.27.png)
   - User
-![page](https://github.com/cpeggy/113-1-Database/blob/main/database_hw2/%E6%88%AA%E5%9C%96%202024-10-28%2016.16.15.png)
+![page](https://github.com/cpeggy/113-1-Database/blob/main/database_hw2/%E6%88%AA%E5%9C%96%202024-10-28%2016.10.15.png)
 3. Pages
   - Post
 ![sql](https://github.com/cpeggy/113-1-Database/blob/main/database_hw2/%E6%88%AA%E5%9C%96%202024-10-28%2016.16.33.png)
