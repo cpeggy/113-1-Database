@@ -11,6 +11,8 @@
 #### [week5](https://docs.google.com/presentation/d/1nPo7PcWntxXfGq-PYYcIF0pk1Ce7YFASdPNb2iHYzB0/edit#slide=id.g23dd2219a46_0_124)
 #### [week6](https://docs.google.com/presentation/d/1V1Zi_RGfnLGiRHGSgiyqW0pOLQ7viDjkh6WwswiD6ds/edit#slide=id.g23dd2219a46_0_124)
 #### [week7](https://docs.google.com/presentation/d/11NYzzT6Z5HWKFV4chKcUTBK_du68cvPryrZHhTrpOSE/edit#slide=id.g23dd2219a46_0_124)
+#### [week8](https://docs.google.com/presentation/d/122ROgAdilhbRa8ksyruu08j4coh65N_wJz0mnfjT0vE/edit#slide=id.g23dd2219a46_0_124)
+#### [week9](https://docs.google.com/presentation/d/1O__oGLFsM3EbKLSWxoKjaMcNA86ZAHDHFKLqXYBqw8E/edit#slide=id.g23dd2219a46_0_124)
 ## Resource 
 #### [Mermaid](https://mermaid.live/edit#pako:eNpVjs1qw0AMhF9F6NRC_AI-FBq7zSXQQnPz5iBs2bvE-8NaSwi2373r-NLqJM18M2jG1neMJfajv7eaosClVg7yvDeVjmYSS9MViuJtObGA9Y4fCxxfTh4m7UMwbnjd-eMGQTWfN4xBtHG3dbeqZ_7L8QJ1c6YgPlz_Ope7X-CjMd861_93dOSc-mx6KnsqWopQUXwieEDL0ZLp8vvzpigUzZYVlnntuKc0ikLl1oxSEv_zcC2WEhMfMPo0aMyd45SvFDoSrg0NkeyOrL_WfFuF)
 #### ![image](https://github.com/cpeggy/113-1-Database/blob/main/%E6%88%AA%E5%9C%96%202024-10-14%2009.24.49.png)
@@ -24,3 +26,4 @@
   - [Improvement of search function](https://github.com/cpeggy/113-1-Database/tree/main/database_pra4improve)
 ## Homework
 #### [HW1](https://github.com/cpeggy/113-1-Database/tree/main/database_hw1)
+#### [HW2]()
