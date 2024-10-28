@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <title>All Data Management</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- User List Section -->
+        <div class="container mt-5">
+            <!-- 新增使用者表單 -->
+            <h2 class="text-center mb-4">Create New User</h2>
+            <form action="{{ url_for('create_bp.create_user') }}" method="POST" class="mb-4">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add User</button>
+            </form>
+        {# User List Section #}
+        <div class="section users-section mb-5">
+            <h2 id="user-list" class="text-center mb-4">User List</h2>
+            {% for user in users %}
+            <div class="user-item">
+                <strong>Username:</strong> {{ user.username }} - <strong>Email:</strong> {{ user.email }}
+                <span class="small">(Registered on: {{ user.registered_at }})</span>
+                <button class="btn btn-sm btn-primary" onclick="editUser('{{ user.user_id }}', '{{ user.username }}', '{{ user.email }}')">Edit</button>
+                <button class="btn btn-sm btn-danger" onclick="deleteUser('{{ user.user_id }}')">Delete</button>
+            </div>
+            {% endfor %}
+        </div>
+
+        {# Edit User Modal #}
+
+        <!-- Edit User Modal -->
+        <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="editUserForm" method="POST">
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="editUsername" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="editUsername" name="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="editEmail" name="email" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+                <!-- Post Creation Section -->
+                <section class="post-creation mb-5">
+                    <h2 class="text-center mb-4">Create New Post</h2>
+                    <form id="create-post-form" action="{{ url_for('create_bp.create_post') }}" method="POST" class="mb-4">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title" name="title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="content" class="form-label">Content</label>
+                            <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="partner_needed" name="partner_needed">
+                            <label class="form-check-label" for="partner_needed">Partner Needed</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Post</button>
+                    </form>
+                </section>
+
+        <!-- Posts List Section -->
+        <section class="posts-section">
+            <h2 class="text-center mb-4">Posts</h2>
+            {% for post in posts %}
+            <div class="card mb-4" id="post-{{ post.post_id }}">
+                <div class="card-body">
+                    <!-- Post Content -->
+                    <div class="post-content">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.content }}</p>
+                        <small class="text-muted d-block mb-3">Created At: {{ post.created_at }}</small>
+                    </div>
+
+                    <div class="author-info mb-3">
+                        <h6>Author Information</h6>
+                        <ul class="list-group list-group-flush" id="author-info-{{ post.user_id }}">
+                            <!-- Normal View -->
+
+                            <li class="list-group-item">
+                                <strong>Email:</strong> 
+                                <span id="author-email-{{ post.user_id }}">{{ post.email }}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Registered At:</strong> {{ post.registered_at }}
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Username:</strong> <span id="author-username-{{ post.user_id }}">{{ post.user_name }}</span>
+                            </li>
+                            
+                        </ul>                            
+                    </div>
+                    
+                    <!-- Post Actions -->
+                    <div class="post-actions mb-3">
+                        <button class="btn btn-warning me-2" onclick="enableEdit({{ post.post_id }})">Update Post</button>
+                        <button class="btn btn-danger" onclick="deletePost({{ post.post_id }})">Delete Post</button>
+                    </div>
+
+                    <!-- Edit Form (Hidden by default) -->
+                    <div id="edit-fields-{{ post.post_id }}" class="edit-form d-none mb-3">
+                        <div class="mb-2">
+                            <input type="text" id="edit-title-{{ post.post_id }}" class="form-control" value="{{ post.title }}">
+                        </div>
+                        <div class="mb-2">
+                            <textarea id="edit-content-{{ post.post_id }}" class="form-control">{{ post.content }}</textarea>
+                        </div>
+                        <div class="mb-2 form-check">
+                            <input type="checkbox" id="edit-partner-needed-{{ post.post_id }}" class="form-check-input" {% if post.partner_needed %}checked{% endif %}>
+                            <label class="form-check-label">Partner Needed</label>
+                        </div>
+                        <div class="mt-2">
+                            <button class="btn btn-success me-2" onclick="saveEdit({{ post.post_id }})">Save</button>
+                            <button class="btn btn-secondary" onclick="cancelEdit({{ post.post_id }})">Cancel</button>
+                        </div>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <div class="comments-section">
+                        <h6 class="mb-3">Comments</h6>
+                        
+                        <!-- Add Comment Button -->
+                        <div class="add-comment mb-3">
+                            <button class="btn btn-sm btn-outline-primary mb-2" onclick="toggleCommentForm({{ post.post_id }})">
+                                + Add Comment
+                            </button>
+                            <div id="add-comment-form-{{ post.post_id }}" class="d-none">
+                                <input type="text" id="comment-input-{{ post.post_id }}" class="form-control mb-2" placeholder="Enter your comment">
+                                <div class="btn-group">
+                                    <button class="btn btn-primary btn-sm" onclick="submitComment({{ post.post_id }})">Submit</button>
+                                    <button class="btn btn-secondary btn-sm" onclick="cancelComment({{ post.post_id }})">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comments List -->
+                        <ul class="list-group">
+                            {% for comment in post.comments %}
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span id="comment-content-{{ comment.comment_id }}">{{ comment.comment_content }}</span>
+                                    <div class="comment-actions">
+                                        <button class="btn btn-warning btn-sm me-2" onclick="enableEditComment({{ comment.comment_id }})">Update</button>
+                                        <button class="btn btn-danger btn-sm" onclick="deleteComment({{ comment.comment_id }})">Delete</button>
+                                    </div>
+                                </div>
+                                <!-- Comment Edit Form (Hidden by default) -->
+                                <div id="edit-comment-form-{{ comment.comment_id }}" class="d-none mt-2">
+                                    <input type="text" id="edit-comment-{{ comment.comment_id }}" class="form-control mb-2" value="{{ comment.comment_content }}">
+                                    <button class="btn btn-success btn-sm me-2" onclick="saveEditComment({{ comment.comment_id }})">Save</button>
+                                    <button class="btn btn-secondary btn-sm" onclick="cancelEditComment({{ comment.comment_id }})">Cancel</button>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+
+    <script>
+        // Post Management
+        function enableEdit(postId) {
+            document.getElementById(`edit-fields-${postId}`).classList.remove('d-none');
+        }
+        
+        function saveEdit(postId) {
+            const newTitle = document.getElementById(`edit-title-${postId}`).value.trim();
+            const newContent = document.getElementById(`edit-content-${postId}`).value.trim();
+            const partnerNeeded = document.getElementById(`edit-partner-needed-${postId}`).checked;
+            
+            if (!newTitle || !newContent) {
+                alert('Title and content cannot be empty!');
+                return;
+            }
+        
+            fetch(`/posts/update/${postId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    title: newTitle, 
+                    content: newContent, 
+                    partner_needed: partnerNeeded 
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert(data.error || "Update failed");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to update post');
+            });
+        }
+        
+        function cancelEdit(postId) {
+            document.getElementById(`edit-fields-${postId}`).classList.add('d-none');
+        }        
+
+        function deletePost(postId) {
+            if (!confirm("Are you sure you want to delete this post?")) {
+                return;
+            }
+
+            fetch(`/posts/delete/${postId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert(data.error || "Failed to delete post");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to delete post');
+            });
+        }        
+    
+        // Comment Management
+        function toggleCommentForm(postId) {
+            const form = document.getElementById(`add-comment-form-${postId}`);
+            form.classList.toggle('d-none');
+        }
+        
+        function submitComment(postId) {
+            const commentContent = document.getElementById(`comment-input-${postId}`).value.trim();
+            
+            if (!commentContent) {
+                alert('Comment cannot be empty!');
+                return;
+            }
+            
+            fetch('/comments/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    comment_content: commentContent,
+                    post_id: postId,
+                    user_id: 1  // 假設用戶 ID 為 1
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert(data.error || 'Failed to add comment');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to add comment');
+            });
+        }
+        
+        function cancelComment(postId) {
+            const form = document.getElementById(`add-comment-form-${postId}`);
+            const input = document.getElementById(`comment-input-${postId}`);
+            input.value = '';
+            form.classList.add('d-none');
+        }
+
+        function deleteComment(commentId) {
+            if (!confirm("Are you sure you want to delete this comment?")) {
+                return;
+            }
+
+            fetch(`/comments/delete/${commentId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert(data.error || "Failed to delete comment");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to delete comment');
+            });
+        }
+
+        function enableEditComment(commentId) {
+            const content = document.getElementById(`comment-content-${commentId}`);
+            const form = document.getElementById(`edit-comment-form-${commentId}`);
+            content.classList.add('d-none');
+            form.classList.remove('d-none');
+        }
+
+        function saveEditComment(commentId) {
+            const newContent = document.getElementById(`edit-comment-${commentId}`).value.trim();
+            
+            if (!newContent) {
+                alert('Comment cannot be empty!');
+                return;
+            }
+
+            fetch(`/comments/update/${commentId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ comment_content: newContent })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert(data.error || "Failed to update comment");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to update comment');
+            });
+        }
+
+        function cancelEditComment(commentId) {
+            const content = document.getElementById(`comment-content-${commentId}`);
+            const form = document.getElementById(`edit-comment-form-${commentId}`);
+            content.classList.remove('d-none');
+            form.classList.add('d-none');
+        }
+        function enableAuthorEdit(userId) {
+            // 隱藏普通顯示區域
+            document.getElementById(`author-info-${userId}`).classList.add('d-none');
+            // 顯示編輯表單
+            document.getElementById(`author-edit-form-${userId}`).classList.remove('d-none');
+        }
+        
+        function saveAuthorEdit(userId) {
+            const newUsername = document.getElementById(`edit-author-username-${userId}`).value.trim();
+            const newEmail = document.getElementById(`edit-author-email-${userId}`).value.trim();
+        
+            if (!newUsername || !newEmail) {
+                alert('Username and email cannot be empty!');
+                return;
+            }
+        
+            fetch(`/users/update/${userId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: newUsername,
+                    email: newEmail
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();  // 更新顯示
+                } else {
+                    alert(data.error || 'Failed to update author information');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to update author information');
+            });
+        }
+    
+        
+        function cancelAuthorEdit(userId) {
+            // Show normal view
+            document.getElementById(`author-username-${userId}`).parentElement.parentElement.classList.remove('d-none');
+            // Hide edit form
+            document.getElementById(`author-edit-form-${userId}`).classList.add('d-none');
+        }
+        
+        function deleteAuthor(userId) {
+            if (!confirm('Are you sure you want to delete this user? This action cannot be undone.')) {
+                return;
+            }
+        
+            fetch(`/users/delete/${userId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Reload the page or update UI as needed
+                    location.reload();
+                } else {
+                    alert(data.error || 'Failed to delete user');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to delete user');
+            });
+        }
+        
+        // Helper function to validate email (if not already defined)
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function editUser(id, username, email) {
+            document.getElementById('editUsername').value = username;
+            document.getElementById('editEmail').value = email;
+            // 設定表單 action
+            const form = document.getElementById('editUserForm');
+            form.onsubmit = function(event) {
+                event.preventDefault(); // 防止表單的預設提交行為
+                
+                const newUsername = document.getElementById('editUsername').value.trim();
+                const newEmail = document.getElementById('editEmail').value.trim();
+
+        fetch(`/users/update/${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: newUsername,
+                email: newEmail
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();  // 更新顯示而不跳轉
+            } else {
+                alert(data.error || 'Failed to update user information');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to update user information');
+        });
+    };
+
+            const editModal = new bootstrap.Modal(document.getElementById('editUserModal'), {});
+            editModal.show();
+        }        
+        function deleteUser(userId) {
+            if (!confirm('Are you sure you want to delete this user? This action cannot be undone.')) {
+                return;
+            }
+        
+            fetch(`/users/delete/${userId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert(data.error || 'Failed to delete user');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to delete user');
+            });
+        }        
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
