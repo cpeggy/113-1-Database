@@ -3,11 +3,11 @@
 1. ERD
 2. html page overview
   - Post
-![page](https://github.com/cpeggy/113-1-Database/blob/main/database_hw1/%E6%88%AA%E5%9C%96%202024-09-16%2011.13.02.png)
+![page](https://github.com/cpeggy/113-1-Database/blob/main/database_hw2/%E6%88%AA%E5%9C%96%202024-10-28%2016.10.22.png)
   - Comment
-![page](https://github.com/cpeggy/113-1-Database/blob/main/database_hw1/%E6%88%AA%E5%9C%96%202024-09-16%2011.13.02.png)
+![page](https://github.com/cpeggy/113-1-Database/blob/main/database_hw2/%E6%88%AA%E5%9C%96%202024-10-28%2016.10.27.png)
   - User
-![page](https://github.com/cpeggy/113-1-Database/blob/main/database_hw1/%E6%88%AA%E5%9C%96%202024-09-16%2011.13.02.png)
+![page](https://github.com/cpeggy/113-1-Database/blob/main/database_hw2/%E6%88%AA%E5%9C%96%202024-10-28%2016.10.15.png)
 3. sqls
   - Post
 ![sql](https://github.com/cpeggy/113-1-Database/blob/main/database_hw1/%E6%88%AA%E5%9C%96%202024-09-16%2011.13.57.png)
