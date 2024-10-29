@@ -29,6 +29,6 @@
 ### Full code
 [Here!](https://github.com/cpeggy/113-1-Database/tree/main/database_hw3)
 ## The next I can improve.....
-1. 
-2. 
+1. Add validation in the backend for fields like title and content to ensure they meet length or format requirements.
+2. Add other basic functions of backend: Read& Update& Delete.
 3. Any comment or new idea to this smallllllll project, don't hesitate to tell me :).
