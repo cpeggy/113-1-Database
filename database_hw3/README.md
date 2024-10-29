@@ -23,12 +23,12 @@
 3. MongoDB looks
 ![db](https://github.com/cpeggy/113-1-Database/blob/main/database_hw3/%E6%88%AA%E5%9C%96%202024-10-29%2011.42.06.png)
 3. Successfully creating in MongoDB!
-![db](https://github.com/cpeggy/113-1-Database/blob/main/database_hw3/%E6%88%AA%E5%9C%96%202024-10-29%2011.42.06.png)
+![db](https://github.com/cpeggy/113-1-Database/blob/main/database_hw3/%E6%88%AA%E5%9C%96%202024-10-29%2012.00.56.png)
 ### How it works?
 [View Youtube]()
 ### Full code
 [Here!](https://github.com/cpeggy/113-1-Database/tree/main/database_hw3)
 ## The next I can improve.....
-1. To let frontend more user-friendly :>
-2. Let user edit page same as other (in posts.html)
+1. 
+2. 
 3. Any comment or new idea to this smallllllll project, don't hesitate to tell me :).
