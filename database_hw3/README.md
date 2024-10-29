@@ -2,9 +2,9 @@
 ## Create NoSQL and practice to Create
 1. html page
   -Home 
-![page](https://github.com/cpeggy/113-1-Database/blob/main/database_hw2/%E6%88%AA%E5%9C%96%202024-10-27%2017.24.30.png)
+![page](https://github.com/cpeggy/113-1-Database/blob/main/database_hw3/%E6%88%AA%E5%9C%96%202024-10-29%2011.41.35.png)
   - Create post
-![page](https://github.com/cpeggy/113-1-Database/blob/main/database_hw2/%E6%88%AA%E5%9C%96%202024-10-28%2016.10.22.png)
+![page](https://github.com/cpeggy/113-1-Database/blob/main/database_hw3/%E6%88%AA%E5%9C%96%202024-10-29%2011.41.48.png)
 2. import to MongoDB's JSON format
 ```
 {
@@ -21,7 +21,9 @@
 }
 ```
 3. MongoDB looks
-[db](https://github.com/cpeggy/113-1-Database/blob/main/database_hw2/%E6%88%AA%E5%9C%96%202024-10-28%2016.10.22.png)
+![db](https://github.com/cpeggy/113-1-Database/blob/main/database_hw3/%E6%88%AA%E5%9C%96%202024-10-29%2011.42.06.png)
+3. Successfully creating in MongoDB!
+![db](https://github.com/cpeggy/113-1-Database/blob/main/database_hw3/%E6%88%AA%E5%9C%96%202024-10-29%2011.42.06.png)
 ### How it works?
 [View Youtube]()
 ### Full code
