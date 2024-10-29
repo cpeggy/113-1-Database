@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Post</title>
+</head>
+<body>
+    <h1>Create New Post</h1>
+    <form method="POST" action="{{ url_for('create_bp.create_post') }}">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" required></textarea><br><br>
+
+        <label for="partner_needed">Partner Needed:</label>
+        <input type="checkbox" id="partner_needed" name="partner_needed"><br><br>
+
+        <input type="submit" value="Create Post">
+    </form>
+    <br>
+    <!-- 修改此處，將 'create_bp.index' 改為 'index' -->
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

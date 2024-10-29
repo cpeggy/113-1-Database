@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Posts</title>
+</head>
+<body>
+    <h1>All Posts</h1>
+    <ul>
+        {% for post in posts %}
+            <li><strong>{{ post['title'] }}</strong>: {{ post['content'] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('create_bp.create_form') }}">Create a New Post</a>
+</body>
+</html>
