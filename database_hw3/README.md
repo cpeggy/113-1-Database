@@ -25,7 +25,7 @@
 3. Successfully creating in MongoDB!
 ![db](https://github.com/cpeggy/113-1-Database/blob/main/database_hw3/%E6%88%AA%E5%9C%96%202024-10-29%2012.00.56.png)
 ### How it works?
-[View Youtube]()
+[View Youtube](https://youtu.be/1KZe_VoLYpc)
 ### Full code
 [Here!](https://github.com/cpeggy/113-1-Database/tree/main/database_hw3)
 ## The next I can improve.....
