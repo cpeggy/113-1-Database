@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Posts</title>
+</head>
+<body>
+    <h1>All Posts</h1>
+
+    <!-- Search form -->
+    <form method="POST" action="{{ url_for('app_bp.search_posts') }}">
+        <input type="text" name="query" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>    
+
+    <!-- Show All Toggle Button -->
+    <a href="{{ url_for('app_bp.toggle_show_all') }}">
+        {% if show_all %}Hide All{% else %}Show All{% endif %}
+    </a>
+
+    <ul>
+        {% for post in data %}
+            <li><strong>{{ post['title'] }}</strong>: {{ post['content'] }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Display search results, if any -->
+    {% if results %}
+        <h2>Search Results</h2>
+        <ul>
+            {% for result in results %}
+                <li><strong>{{ result['title'] }}</strong>: {{ result['content'] }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <a href="{{ url_for('app_bp.create_post') }}">Create a New Post</a>
+</body>
+</html>

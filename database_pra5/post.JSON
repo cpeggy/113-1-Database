@@ -1,0 +1,12 @@
+{
+    "title": "First Post",
+    "content": "This is the content of the first post.",
+    "partner_needed": true,
+    "created_at": { "$date": "2024-10-28T10:00:00Z" },
+    "comments": [
+        {
+            "comment_content": "This is a comment",
+            "commented_at": { "$date": "2024-10-28T12:00:00Z" }
+        }
+    ]
+}
