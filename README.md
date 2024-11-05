@@ -13,6 +13,8 @@
 #### [week7](https://docs.google.com/presentation/d/11NYzzT6Z5HWKFV4chKcUTBK_du68cvPryrZHhTrpOSE/edit#slide=id.g23dd2219a46_0_124)
 #### [week8](https://docs.google.com/presentation/d/122ROgAdilhbRa8ksyruu08j4coh65N_wJz0mnfjT0vE/edit#slide=id.g23dd2219a46_0_124)
 #### [week9](https://docs.google.com/presentation/d/1O__oGLFsM3EbKLSWxoKjaMcNA86ZAHDHFKLqXYBqw8E/edit#slide=id.g23dd2219a46_0_124)
+#### [week10](https://docs.google.com/presentation/d/1J3LxELH5SlEZZD06QgyDnzbfXytYbbZqXFkHbs8fGCQ/edit#slide=id.g23dd2219a46_0_124)
+#### [week11](https://docs.google.com/presentation/d/10eb-kCVpgirPLLjQ6pJwdoc65K1hmz_HTD5JREe9bMU/edit#slide=id.g23dd2219a46_0_124)
 ## Resource 
 #### [Mermaid](https://mermaid.live/edit#pako:eNpVjs1qw0AMhF9F6NRC_AI-FBq7zSXQQnPz5iBs2bvE-8NaSwi2373r-NLqJM18M2jG1neMJfajv7eaosClVg7yvDeVjmYSS9MViuJtObGA9Y4fCxxfTh4m7UMwbnjd-eMGQTWfN4xBtHG3dbeqZ_7L8QJ1c6YgPlz_Ope7X-CjMd861_93dOSc-mx6KnsqWopQUXwieEDL0ZLp8vvzpigUzZYVlnntuKc0ikLl1oxSEv_zcC2WEhMfMPo0aMyd45SvFDoSrg0NkeyOrL_WfFuF)
 #### ![image](https://github.com/cpeggy/113-1-Database/blob/main/Different%20Types%20of%20SQL%20JOINs.png)
