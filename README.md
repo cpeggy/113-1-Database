@@ -26,7 +26,7 @@
   - [Improvement of pop and created_time](https://github.com/cpeggy/113-1-Database/tree/main/database_pra3imporve)
 #### [Flask +MySQL CRUD](https://github.com/cpeggy/113-1-Database/tree/main/database_pra4)
   - [Improvement of search function](https://github.com/cpeggy/113-1-Database/tree/main/database_pra4improve)
-#### [Flask +NoSQL create&read](https://github.com/cpeggy/113-1-Database/tree/main/database_pra5)
+#### [Flask +NoSQL create&read and search](https://github.com/cpeggy/113-1-Database/tree/main/database_pra5)
 ## Homework
 #### [HW1](https://github.com/cpeggy/113-1-Database/tree/main/database_hw1)
 #### [HW2](https://github.com/cpeggy/113-1-Database/blob/main/database_hw2/README.md)
