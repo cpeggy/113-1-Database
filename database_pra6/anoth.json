@@ -1,0 +1,41 @@
+[
+    {
+        "_id": "ObjectId('671f6fa9732e43863c9af68')",
+        "headline": "New Feature Rollout",
+        "description": "Announcing the release of our new feature set to enhance user experience.",
+        "requires_collaboration": true,
+        "publish_date": "2024-11-07T10:15:00.000+00:00",
+        "tags": ["release", "feature", "announcement"]
+    },
+    {
+        "_id": "ObjectId('671f6fa9732e43863c9af69')",
+        "headline": "Tips for Effective Remote Work",
+        "summary": "Practical tips to stay productive and maintain work-life balance while working remotely.",
+        "requires_collaboration": false,
+        "created_on": "2024-11-06T09:30:00.000+00:00",
+        "feedback": ["Helpful guide!", "Thanks for the tips."]
+    },
+    {
+        "_id": "ObjectId('671f6fa9732e43863c9af6A')",
+        "title": "Quarterly Team Highlights",
+        "details": "A summary of achievements and milestones reached this quarter.",
+        "needs_partner": false,
+        "created_date": "2024-11-03T11:00:00.000+00:00"
+    },
+    {
+        "_id": "ObjectId('671f6fa9732e43863c9af6B')",
+        "subject": "Company Event Overview",
+        "content": "Here’s a look back at our recent company event with photos and comments.",
+        "partner_required": true,
+        "event_date": "2024-11-05T16:00:00.000+00:00",
+        "responses": ["Great event!", "Well-organized!"]
+    },
+    {
+        "_id": "ObjectId('671f6fa9732e43863c9af6C')",
+        "title": "Introduction to Data Science",
+        "body": "An introductory guide to getting started with data science principles.",
+        "collaboration_needed": false,
+        "date_posted": "2024-11-02T14:00:00.000+00:00",
+        "comments": ["Interesting read!", "Looking forward to more."]
+    }
+]
