@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <h1>Posts Management</h1>
+<!-- 新增資料按鈕 -->
+<a href="{{ url_for('app_bp.create_post') }}">Create New Post</a>
+
+    <!-- 搜尋表單 -->
+    <form method="POST" action="{{ url_for('app_bp.search_posts') }}">
+        <label for="query">Search Posts:</label>
+        <input type="text" id="query" name="query" placeholder="Enter search keyword" required>
+        <button type="submit">Search</button>
+    </form>
+    <!-- 搜尋結果或所有資料顯示 -->
+    {% if results is not none and results|length > 0 %}
+        <h2>Search Results</h2>
+        <a href="{{ url_for('app_bp.read_posts') }}" style="display:block; margin-top:20px;">
+            <button>Back to Home</button>
+        </a>
+        {% for post in results %}
+            <div>
+                {% for key, value in post.items() %}
+                    {% if key != '_id' %}
+                        <p><strong>{{ key.replace('_', ' ').capitalize() }}:</strong> {{ value }}</p>
+                    {% endif %}
+                {% endfor %}
+                <!-- 功能區 -->
+                <a href="{{ url_for('update_bp.update', id=post['_id']) }}">Edit</a>
+                <form method="POST" action="{{ url_for('delete_bp.delete', id=post['_id']) }}" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this post?');">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+            <hr>
+            <!-- 返回首頁按鈕 -->
+        
+        {% endfor %}
+    {% elif data is not none and data|length > 0 %}
+    
+        <h2>All Posts</h2>
+        {% for post in data %}
+            <div>
+                {% for key, value in post.items() %}
+                    {% if key != '_id' %}
+                        <p><strong>{{ key.replace('_', ' ').capitalize() }}:</strong> {{ value }}</p>
+                    {% endif %}
+                {% endfor %}
+                <!-- 功能區 -->
+                <a href="{{ url_for('update_bp.update', id=post['_id']) }}">Edit</a>
+                <form method="POST" action="{{ url_for('delete_bp.delete', id=post['_id']) }}" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this post?');">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No entries found.</p>
+    {% endif %}
+
+    <!-- 顯示錯誤訊息（如果有） -->
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+</body>
+</html>
