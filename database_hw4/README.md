@@ -7,16 +7,19 @@
   - All posts' view (Read)
 ![read]()
   - Creat post
-![create]()
-  - Search
-![Search]()
+![create](https://github.com/cpeggy/113-1-Database/blob/main/database_hw4/creatw.png)
+![create](https://github.com/cpeggy/113-1-Database/blob/main/database_hw4/%E6%88%AA%E5%9C%96%202024-11-23%2016.06.46.png)
   - Update
-![Update]()
+![Update](https://github.com/cpeggy/113-1-Database/blob/main/database_hw4/Update.png)
+![Update](https://github.com/cpeggy/113-1-Database/blob/main/database_hw4/%E6%88%AA%E5%9C%96%202024-11-23%2016.07.53.png)
   - Delete
-![Delete]()
+![Delete](https://github.com/cpeggy/113-1-Database/blob/main/database_hw4/delete.png)
+  - Search
+![Search](https://github.com/cpeggy/113-1-Database/blob/main/database_hw4/Search%20area.png)
 ### How it works?
 [View Youtube]()
 ### Full code
 [Here!](https://github.com/cpeggy/113-1-Database/tree/main/database_hw4)
 ## The next I can improve.....
-1. 
+1. User friendlly on surface.
+2. 
