@@ -5,7 +5,7 @@
 ![db](https://github.com/cpeggy/113-1-Database/blob/main/database_hw4/%E6%88%AA%E5%9C%96%202024-11-23%2015.59.03.png)
 3. Frontend
   - All posts' view (Read)
-![read]()
+![read](https://github.com/cpeggy/113-1-Database/blob/main/database_hw4/%E6%88%AA%E5%9C%96%202024-11-23%2016.07.27.png)
   - Creat post
 ![create](https://github.com/cpeggy/113-1-Database/blob/main/database_hw4/creatw.png)
 ![create](https://github.com/cpeggy/113-1-Database/blob/main/database_hw4/%E6%88%AA%E5%9C%96%202024-11-23%2016.06.46.png)
